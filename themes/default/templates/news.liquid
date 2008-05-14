@@ -1,0 +1,31 @@
+{% assign body_classname = 'news' %}
+
+{% if  mode == 'single' %}
+
+  {% include 'post' with post %}
+
+  {% include 'comments' post.comments owner:post %}
+
+{% else %}
+
+  <h1>News</h1>
+
+  {% for post in posts %}
+    
+    {% if forloop.index <= 3 %}
+      
+      {% include 'post' with post inline:false %}
+      
+      {% if forloop.index == 3%}
+        <h2>Older Entries</h2>
+      {% endif %}
+      
+    {% else %}
+    
+    {% include 'post' with post inline:true %}
+    
+    {% endif %}
+
+  {% endfor %}
+
+{% endif %}

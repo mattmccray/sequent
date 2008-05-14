@@ -1,0 +1,235 @@
+/* @group Elements */
+
+/* Level the playing ground... All browsers should now look alike, in theory. */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+/* @end */
+
+/* @group Layout */
+
+#site-container {
+  width: 850px;
+  margin: 0 auto;
+}
+
+#site-header {
+  height: 125px;
+  background: url(../images/header-bg.png) left bottom no-repeat;
+	overflow: hidden;
+}
+
+#site-content {
+  padding: 15px 0px;
+}
+
+#topper {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+#comic IMG {
+	border: 0px;
+}
+
+#pager {
+	color: gray;
+	padding-bottom: 25px;
+}
+
+#left {
+  width: 500px;
+}
+
+#right {
+  width: 300px;
+  float: right;
+  border-left: 1px dotted #CCC;
+}
+
+#site-footer {
+  clear: both;
+  background: #CCC url(../images/footer-cap.png) top left no-repeat;
+	margin-top: 25px;
+  padding: 10px 0px;
+}
+
+/* @end */
+
+/* @group Header/Tabs */
+
+#site-header-ads {
+  float: right;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+#site-logo {
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#site-tabset {
+  padding-top: 95px;
+  padding-left: 275px;
+}
+
+#site-tabset UL {
+  list-style: none;
+}
+
+#site-tabset LI {
+  float: left;
+  margin-right: 1px;
+}
+
+#site-tabset LI A {
+  display: block;
+  padding-top: 6px;
+  text-align: center;
+  width: 78px;
+  height: 30px;
+  text-decoration: none;
+  color: #C8D1FD;
+}
+
+#site-tabset LI A:hover {
+  background: url(../images/tab-hover-bg.png) top left no-repeat;
+  color: #1A0D6B;
+}
+
+/* Selects the current tab */
+
+.home #site-tabset LI.comic A,
+.comic #site-tabset LI.archive A,
+.about #site-tabset LI.about A,
+.extra #site-tabset LI.extra A,
+.store #site-tabset LI.store A,
+.links #site-tabset LI.links A,
+.news #site-tabset LI.news A {
+  background: url(../images/tab-bg.png) top left no-repeat;
+  color: black !important;
+}
+
+/* @end */
+
+/* @group Content Area */
+
+#left-content {
+  padding-left: 25px;
+}
+
+#pager {
+	cursor: default;
+	margin: 5px 0px;
+}
+
+#pager SPAN, #pager A {
+	padding: 0px 5px;
+}
+
+#pager A {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#pager A:hover {
+	text-decoration: underline;
+}
+
+
+.post.inline {
+	font-size: 78%;
+	margin-bottom: 5px;
+}
+
+.post {
+	margin-bottom: 35px;
+	color: gray;
+}
+
+.post h1 {
+	font-size: 135%;
+}
+
+.post h1 A {
+	text-decoration: none;
+	color: #555;
+}
+
+.post h1 A:hover {
+	text-decoration: underline;
+}
+
+.post h1 SPAN {
+	float: right;
+	font-size: 70%;
+	margin-left: 15px;
+}
+
+.post h1 .date {
+	padding-left: 18px;
+	background: url(../images/calendar.png) 0px 50% no-repeat;	
+}
+
+.post h1 .comments A {
+	color: gray;
+	padding-left: 18px;
+	background: url(../images/comment.png) 0px 50% no-repeat;
+}
+
+.post-body {
+	margin-top: 10px;
+}
+
+.post-body P {
+	font-size: 90%;
+	line-height: 1.3em;
+	margin-bottom: 15px;
+}
+
+.past-entries A {
+	color: black;
+	text-decoration: none;
+	padding-left: 18px;
+	background: url(../images/newspaper.png) 0px 50% no-repeat;	
+}
+
+.past-entries A:hover {
+	text-decoration: underline;
+}
+
+/* @end */
+
+/* @group Sidebar  */
+
+#right-content {
+  padding: 0px 25px;
+}
+
+/* @end */
+
+/* @group Footer */
+
+#site-footer-content {
+  padding: 15px;
+  font-size: 80%;
+  color: #333;
+  text-align: center;
+}
+
+#site-footer-ads {
+  text-align: center;
+  padding: 15px;
+}
+
+/* @end */

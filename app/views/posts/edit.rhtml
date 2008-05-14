@@ -1,0 +1,13 @@
+
+<% labeled_form_for(:post, :url=>post_path(@post), :html=>{ :method=>:put, :multipart=>true }) do |f| %>
+
+  <%= error_messages_for :post %>
+
+  <%= render :partial=>'form_fields', :locals=>{:f=>f} %>
+  
+  <% f.button_group do %>
+    <%= submit_button "Save Changes" %> or <%= link_to 'Cancel', posts_path %>
+  <% end %>
+
+<% end %>
+

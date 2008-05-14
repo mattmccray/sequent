@@ -1,0 +1,77 @@
+/* 
+  datepicker styles
+  David Lee 2005
+  all parts user servicable
+*/
+
+A.datepicker_link {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 1px dotted gray;
+}
+A.datepicker_link:hover {
+	border-bottom: 1px solid gray;
+}
+
+
+.date_picker {
+  /* comment out this line to show by default: */
+  display: none;
+  /* comment out this line to prevent calendar 'floating' over page: */
+  position: absolute;
+  background-color:white;
+  padding: 3px;
+  border: 1px solid silver;
+}
+
+.date_picker table {
+  border:        1px solid silver;
+  font-family: verdana, sans-serif;
+}
+.date_picker th {
+  font-size: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.date_picker .day_labels th {
+  color: #494899;
+  font-size: 9px;
+  font-weight: normal;
+}
+
+.date_picker td {
+  width: 18px;
+  background-color: #eee;
+  font-size: 9px;
+  text-align: right;
+}
+
+.date_picker td.selected {
+	background-color: #545699;
+}
+.date_picker td.selected A {
+	color: white;
+}
+
+.date_picker a {
+  text-decoration: none;
+  color: #333;
+	display: block;
+	text-align: center;
+  padding: 2px 0px;
+}
+
+.date_picker a:hover   { color:white ; background-color: gray}
+
+.date_picker .cancel_butt a {
+  font-size: 9px;
+  color: gray;
+  font-family: verdana, sans-serif;
+  text-decoration: none
+}
+.date_picker .cancel_butt a:hover {
+  background-color: gray;
+  color: white;
+}

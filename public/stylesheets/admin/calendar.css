@@ -1,0 +1,58 @@
+/*
+  A red, white, and grey theme.
+  
+  AUTHOR: Geoffrey Grosenbach http://nubyonrails.com
+*/
+
+.calendar {
+  margin: auto;
+	margin-bottom: 25px;
+}
+
+.monthName th {
+  font-weight: normal;
+  text-align: center;
+}
+
+.dayName th {
+  font-size: 0.7em;
+  padding-top: 0.6em;
+  padding-bottom: 0.3em;
+  background-color: #aaa;
+  color: white;
+}
+
+.otherMonth, .day, .specialDay {
+  padding: 5px 6px;
+  border-right: 1px solid white;
+
+}
+
+.otherMonth {
+  color: #eeeeee;
+}
+.weekendDay {
+  background-color: #eeeeee;
+}
+
+.day, .specialDay {
+  text-align: center;
+  border-bottom: 1px dotted #bbbbbb;
+}
+
+.specialDay {
+  background-color: #353B99;
+  color: white;
+}
+.specialDay a, .specialDay a:visited, .specialDay a:hover {
+  color: white;
+  text-decoration: none;
+}
+.specialDay a:hover {
+  color: white;
+  background-color: black;
+}
+
+.specialDay.unpublished {
+	background: gray;
+}

@@ -1,0 +1,293 @@
+@import url('grid.css');
+@import url('form.css');
+@import url('date-picker.css');
+@import url('calendar.css');
+
+/* @group Elements */
+
+/* Level the playing ground... All browsers should now look alike, in theory. */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+
+FIELDSET {
+	border: 1px dotted silver;
+	margin-bottom: 25px;
+}
+FIELDSET LEGEND {
+	margin-left: 10px;
+	color: gray;
+}
+
+FIELDSET UL {
+	list-style: none;
+	padding: 5px;
+	padding-bottom: 10px;
+}
+FIELDSET A {
+	display: block;
+	padding: 2px 10px;
+	color: #000;
+}
+
+FIELDSET A:hover {
+	background: #E3DFFF;
+}
+
+H2 {
+	color: #086bce;
+}
+/* @end */
+
+/* @group Layout */
+
+#site-container {
+  width: 850px;
+  margin: 0 auto;
+}
+
+#site-header {
+  height: 125px;
+  background: url(../../images/admin/header-bg.png) left bottom no-repeat;
+	overflow: hidden;
+}
+
+/* 'Setup' mode */
+.site.first_run #site-header {
+	display: none;
+}
+
+#site-content {
+  padding: 15px 0px;
+}
+
+#left {
+  width: 530px;
+  min-height: 400px;
+	margin-bottom: 25px;
+}
+
+#right {
+  width: 300px;
+  float: right;
+  /*border-left: 1px dotted #CCC;*/
+	margin-bottom: 25px;
+}
+
+#site-footer {
+  clear: both;
+  background: #CCC url(../../images/admin/footer-cap.png) top left no-repeat;
+  padding: 10px 0px;
+}
+
+/* @end */
+
+/* @group Header/Tabs */
+
+#site-header-messages {
+  float: right;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+#site-logo {
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#site-tabset {
+  padding-top: 95px;
+  padding-left: 255px;
+}
+
+#site-tabset UL {
+  list-style: none;
+}
+
+#site-tabset LI {
+  float: left;
+  margin-right: 1px;
+	font-size: 80%;
+}
+
+#site-tabset LI A {
+  display: block;
+  padding-top: 6px;
+  text-align: center;
+  width: 78px;
+  height: 30px;
+  text-decoration: none;
+  color: #C8D1FD;
+}
+
+#site-tabset LI A:hover {
+  background: url(../../images/admin/tab-hover-bg.png) top left no-repeat;
+  color: #1A0D6B;
+}
+
+/* Selects the current tab */
+
+.strips #site-tabset LI.strips A,
+.posts #site-tabset LI.news A,
+.pages #site-tabset LI.pages A,
+.assets #site-tabset LI.assets A,
+.site #site-tabset LI.site A,
+.users #site-tabset LI.users A,
+.comments #site-tabset LI.comments A,
+.admin #site-tabset LI.home A,
+.storylines #site-tabset LI.storylines A {
+  background: url(../../images/admin/tab-bg.png) top left no-repeat;
+  color: black !important;
+}
+
+
+#site-header-links {
+	color: #C8D1FD;
+	font-size: 80%;
+	padding-top: 10px;
+	padding-right: 10px;	
+}
+#site-header-links A {
+	color: white;
+}
+/* @end */
+
+/* @group Content Area */
+
+#left-content {
+  padding-left: 25px;
+}
+
+/* @end */
+
+/* @group Sidebar  */
+
+#right-content {
+  padding: 0px 25px;
+}
+
+
+
+/* @end */
+
+/* @group Footer */
+
+#site-footer-content {
+  padding: 15px;
+  font-size: 80%;
+  color: #333;
+  text-align: center;
+}
+
+#site-footer-ads {
+  text-align: center;
+  padding: 15px;
+}
+
+/* @end */
+
+
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: none;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+
+
+
+/*
+	Page Specific CSS
+*/
+
+.grid SPAN.meta {
+	margin-left: 10px;
+	color: silver;
+}
+
+.grid .comment-header {
+	background: silver;
+	color: gray;
+	padding: 5px;
+	font-size: 75%;
+}
+
+.grid .comment-header SPAN {
+	color: black;
+}
+
+.grid .view-link {
+	cursor: pointer;
+}
+
+.grid .comment-area {
+	margin: 10px;
+	margin-top: 0px;
+	border: 1px solid silver;
+	color: black;
+	background: white;
+	opacity: 0.7;
+}
+
+.grid .comment-body {
+	padding: 10px;
+}

@@ -1,0 +1,16 @@
+<a name="comments" id="comments">&nbsp;</a>
+
+<h2>{{ comments | size }} Comments</h2>
+
+{% for comment in comments %}
+  <h3>{{ comment.author }}</h3>
+  <div>
+    {{ comment.body }}
+  </div>
+{% endfor %}
+
+<h2>Leave A Comment</h2>
+
+{% commentform for owner %}
+  {% include 'comment_form' %}
+{% endcommentform %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  {% head %}
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  	<title>{{ site.title }}</title>
+  	<link rel="stylesheet" type="text/css" href="{{ 'main.css' | stylesheet_path }}" />
+  	{{ content_for_head }}
+  {% endhead %}
+  <body class="{{ body_classname }}">
+    <div id="site-container">
+      <div id="site-header">
+        <div id="site-header-ads">
+          <!-- you could pimp your site here -->
+        </div>
+        <a id="site-logo" href="/">{{ site.title }}</a>
+        <div id="site-tabset">
+        <!-- Tabset -->
+          <ul>
+            <li class="comic"><a href="/">comic</a></li>
+            <li class="archive"><a href="/comic">archive</a></li>
+            <li class="about"><a href="/page/about">about</a></li>
+            <li class="news"><a href="/news">news</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="site-content">
+        <div id="topper">
+          {{ content_for_top }}
+        </div>
+        <div id="right">
+          <div id="right-content">
+            {% include 'sidebar' %}
+          </div>
+        </div>
+        <div id="left">
+          <div id="left-content">
+            {{ content_for_layout }}
+          </div>
+        </div>
+      </div>
+      <div id="site-footer">
+        <div id="site-footer-content">
+          &copy; {{ site.authors }}, all rights reserved. Powered by <a href="http://www.mattmccray.com">Sequent</a>.
+        </div>
+        <div id="site-footer-ads">
+          <!-- More pimpage here -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

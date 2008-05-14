@@ -1,0 +1,7 @@
+author: Matt McCray
+summary: Useful for marking columns as 'textilable', or the like.
+homepage: http://mattmccray.com
+plugin: http://mattmccray.com/svn/rails/plugins/rendered_column
+license: MIT
+version: 0.1
+rails_version: 1.0+

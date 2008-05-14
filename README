@@ -1,0 +1,50 @@
+== Sequent
+
+Sequent is an easy to use web-comic publishing tool. It supports:
+
+* Strip archives
+* News posts
+* Content pages
+* Themes
+* RSS feeds
+* Custom assets: Wallpaper, Avatar, Strip -- each will automatically create thumbnails/versions of different sizes based on type.
+* Caching of pages for better performance
+* Everything is commentable
+
+
+=== Requirements
+
+* Ruby on Rails
+* Database (MySQL, PostgreSQL, or SQLite)
+* ImageMagick
+
+
+=== Installation
+
+First, copy the config/database.example.yml to config/database.yml and update it to point to your database(s). Then, from your installation's root directory, you need to run:
+
+  rake app:setup
+
+It will setup the database, default admin user, and more. After it's done just start your webserver and browse to http://localhost:3000/admin and start publishing your web-comic!
+
+
+=== TODO
+
+* Storyline support
+
+
+=== IDEAS
+
+* Strip preview support (Prototype Image Cropper)
+* Strip tagging
+* Support breaking pages into panels for iPod/PSP support?
+* Cache pages with a slug of 404 and 500 -- therefore supporting theme'd error pages
+* Reordering/Grouping of pages in CMS. It would just be for organization, they would all still be accessible via the URI: /pages/PAGE_NAME
+* Forums? Integrate Beast( beast.caboo.se )
+* Customized ad support? (a mini ad server kinda thing)
+* Password protected pages? -- a) Setup passwords or users/passwords for each page, or b) allow user registrations and only allow a certain 'group' of users into the page.
+* Highlight dates with comics on them in the date-picker?
+* Edit themes in admin UI
+* Scroll the calendar in the Strip admin section
+* Improve admin layout
+

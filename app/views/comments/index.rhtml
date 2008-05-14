@@ -1,0 +1,60 @@
+<script>
+  $(document).ready(function(){
+    $('IMG.collapsible').each(function(){
+      $(this).click(function(){
+        if(/collapsed/.test(this.src)) {
+          $('TR#row-'+ this.id +' .comment-area').slideDown('fast');
+          this.src = this.src.replace('collapsed', 'expanded')
+        } else {
+          $('TR#row-'+ this.id +' .comment-area').slideUp('fast');
+          this.src = this.src.replace('expanded', 'collapsed')
+        }
+      })
+    })
+  })
+</script>
+
+<% [true, false].each do |is_spam| %>
+<% if @comments_grouped.has_key? is_spam %>
+
+<h2><%= is_spam ? "Comments Requiring Approval" : "Comments" %></h2>
+
+<table class="grid">
+  <tr>
+    <th>Author</th>
+    <th>Subject</th>
+    <th>Posted</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for comment in @comments_grouped[is_spam] %>
+  <% classname = cycle( 'even', 'odd', :name=>'comments' ) %>
+  <tr class="<%= classname %>">
+    <td><% mode = (comment.is_spam) ? 'expanded' : 'collapsed' %>
+      <%= image_tag "admin/#{mode}.gif", :align=>'absmiddle', :border=>'0', :id=>comment.id, :class=>"collapsible" %> 
+      <%= comment.author %>
+    </td>
+    <td><%= comment.commentable.title %> <%= image_tag 'admin/link_go.png', :title=>'View', :align=>'absmiddle', :class=>'view-link', :onclick=>"window.open('#{get_link( comment, false)}#comments');" %></td>
+    <td><%= comment.created_on.to_s :short %></td>
+    <td class="approve-delete">
+      <%= approve_button( 'approve', comment_path(comment) ) if comment.is_spam %>
+      <%= delete_button 'delete', comment_path(comment), :class=>'delete-icon' %>
+    </td>
+  </tr>
+  <tr id="row-<%= comment.id %>" class="<%= classname %>" >
+    <td colspan="5">
+      <div class="comment-area" style="display:<%= (mode == 'collapsed') ? 'none' : '' %>;">
+        <div class="comment-header">
+          <div>Email: <span><%= comment.email %></span>, URL: <span><%= comment.url %></span>, IP: <span><%= comment.ip_address %></span></div>
+        </div>
+        <div class="comment-body">
+          <%= comment.rendered_body %>
+        </div>
+      </div>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%- reset_cycle("comments") -%>
+<% end %>
+<% end %>

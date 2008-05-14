@@ -1,0 +1,12 @@
+<div class="post {% if inline %}inline{% endif %}">
+  <h1>
+    <span class="date" title="Post Date">{{ post.created_on | date: '%m.%d.%Y' }}</span>
+    <span class="comments" title="Comments"><a href="{{ post | url_to_post }}#comments">{{ post.comments | size }}</a></span>
+    {{ post | link_to_post }} 
+  </h1>
+  {% unless inline == true %}
+  <div class="post-body">
+    {{ post.body }}
+  </div>
+  {% endunless %}
+</div>

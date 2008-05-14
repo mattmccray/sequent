@@ -1,0 +1,19 @@
+root:
+  id: 1
+  parent_id: nil
+  title: first article
+
+first_unique_child:
+  id: 2
+  parent_id: 1
+  title: second article
+
+second_unique_child:
+  id: 3
+  parent_id: 1
+  title: lorem ipsum
+
+first_competing_child:
+  id: 4
+  parent_id: 1
+  title: first article

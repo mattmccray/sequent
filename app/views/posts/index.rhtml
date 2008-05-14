@@ -1,0 +1,25 @@
+<table class="grid">
+  <tr>
+    <th>Title</th>
+    <th>Posted</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for post in @posts %>
+  <tr class="<%= cycle 'even', 'odd' %>">
+    <td>
+      <%= link_to post.title, edit_post_path(post) %>
+      <span class="meta">
+        <%= pluralize(post.attachments.count, "Attachment") if post.attachments.count > 0 %> 
+        <%= pluralize(post.comments.count, "Comment") if post.comments.count > 0 %> 
+      </span>
+    </td>
+    <td><%= post.created_on.to_s :short %></td>
+    <td class="delete"><%= delete_button 'delete', post_path(post), :class=>'delete-icon' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_button 'New Post', new_post_path %>

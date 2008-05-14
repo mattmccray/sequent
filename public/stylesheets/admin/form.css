@@ -1,0 +1,201 @@
+INPUT[type=text], 
+INPUT[type=file],
+INPUT[type=password],
+TEXTAREA {
+	width: 99%;
+}
+
+INPUT.title {
+	font-size: 130%;
+	font-weight: bold;
+}
+
+
+FORM.inline {
+	display: inline;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+DIV.button-group {
+	padding: 25px 10px;
+	text-align: right;
+}
+
+DIV.button-group A {
+	color: maroon;
+}
+
+DIV.button-group A:hover {
+	color: red;
+}
+
+/* Buttons */
+
+
+BUTTON {
+	text-align: center;
+	line-height: 30px;
+	color: #bbb;
+	border: 0px;
+	width: 125px;
+	height: 30px;
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align: middle;
+	background: url(../../images/admin/button.png) top left no-repeat;
+}
+
+BUTTON:hover {
+	color: #FFF;
+}
+
+BUTTON:active {
+	color: maroon;
+}
+
+BUTTON[disabled=true] {
+	opacity: 0.6;
+}
+
+
+BUTTON.delete-icon {
+	width: 25px;
+	height: 25px;
+	background: url(../../images/admin/cancel.png) 50% 50% no-repeat;
+	cursor: pointer;
+}
+
+BUTTON.delete-icon DIV {
+	display: none;
+}
+
+
+
+
+BUTTON.approve-icon {
+	width: 25px;
+	height: 25px;
+	background: url(../../images/admin/accept.png) 50% 50% no-repeat;
+	cursor: pointer;
+}
+
+BUTTON.approve-icon DIV {
+	display: none;
+}
+
+
+
+.attachment-row {
+	background: #B6BAC7 url(../../images/admin/attach.png) 2px 50% no-repeat;
+	margin: 1px;
+	padding: 3px;
+}
+.attachment-row SPAN {
+	padding-left: 20px;
+}
+.attachment-row.highlight {
+	background-color: red;	
+	color: white;
+}
+.attachment-row.removed.highlight {
+	background-color: #519957;
+}
+.attachment-row.removed {
+	opacity: 0.7;
+	text-decoration: line-through;
+}
+.attachment-row.removed:after {
+	content: " (removed on next save)";
+	/*color: gray;*/ 
+}
+.attachment-row.removed BUTTON {
+	background-image: url(../../images/admin/arrow_undo.png);
+}
+
+.attachment-row INPUT {
+	width: auto;
+	display: none;
+}
+.attachment-row BUTTON {
+	float: right;
+	width: 16px;
+	height: 16px;
+	margin-top: 1px;
+}
+
+.attachment-row.last-row INPUT {
+	width: auto;
+	display: inline;
+}
+.attachment-row.submitting INPUT {
+	display: inline;	
+}
+.attachment-row.submitting BUTTON,
+.attachment-row.submitting SPAN {
+	display: none;	
+}
+
+.attachment-row.last-row {
+	background: transparent;
+}
+.attachment-row.last-row BUTTON {
+	display: none;
+}
+
+
+
+
+.form-container {
+	padding: 10px;
+	background: #D4D9E9;
+}
+.form-container FORM {
+  margin: 0px;
+  padding: 0px;
+}
+.form-container DT {
+  margin: 0px;
+  margin-top: 10px;
+}
+.form-container DT LABEL {
+	color: #22255E;
+}
+.form-container DD {
+  margin: 0px;
+  margin-top: 2px;
+}
+.form-container DD.example {
+  margin: 0px;
+  font-size: 90%;
+  color: gray;
+	text-align: right;
+}
+.form-container .info {
+  font-size: 90%;
+  color: gray;
+  padding-left: 5px;
+}
+.form-container DD.button-group {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 5px;
+  color: #555;
+  font-size: 90%;
+	text-align: right;
+}
+.form-container DD.button-group A {
+  color: maroon;
+}
+.form-container DD.button-group A:hover {
+  color: red;
+}
+
+.form-container DD.button-group.submitting {
+	text-align: center;
+	color: #555;
+	text-shadow: 2px 2px 1px #fff;
+	font-size: 80%;
+	background: url(../../images/admin/loader.gif) 50% 50% no-repeat;
+}
+

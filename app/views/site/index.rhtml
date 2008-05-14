@@ -1,0 +1,10 @@
+<% form_tag site_url(:action=>'save_settings') do %>
+<dl class="form-container" id="meta">
+  
+  <%= render :partial=>'site_info_fields' %>
+
+  <dd class="button-group">
+    <%= submit_button "Save Changes" %>
+  </dd>
+</dl>
+<% end %>

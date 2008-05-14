@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  	<title>Seqent Admin : <%= controller.controller_name %> / <%= controller.action_name %></title>
+    <%= stylesheet_link_tag 'admin/login.css' %>
+  </head>
+  <body class="<%= controller.controller_name %>">
+    <div class="login-container">
+      <div class="login-header">
+        <%= image_tag 'sequent-logo.png' %>
+      </div>
+      <div class="login-body">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

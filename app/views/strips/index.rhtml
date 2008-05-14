@@ -1,0 +1,25 @@
+
+<table class="grid">
+  <tr>
+    <th>Title</th>
+    <th>Published</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for strip in @strips %>
+  <tr id="strip-<%= strip.id  %>" class="<%= cycle 'even', 'odd' %>">
+    <td>
+      <%= link_to strip.title, edit_strip_path(strip)  %>
+      <span class="meta">
+        <%= pluralize(strip.comments.count, "Comment") if strip.comments.count > 0 %> 
+      </span>    
+    </td>
+    <td <%= 'class="unpublished" title="Unpublished"' if !strip.is_published %>><%= strip.published_on.to_s :short %></td>
+    <td class="delete"><%= delete_button 'delete', strip_path(strip), :class=>'delete-icon' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_button 'New Strip', new_strip_path %>

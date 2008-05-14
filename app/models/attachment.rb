@@ -1,0 +1,2 @@
+class Attachment < Asset
+end

@@ -1,0 +1,23 @@
+<dt><label>Site Title:</label></dt> 
+<dd><%= text_field_tag "settings[title]", SiteConfig[:title], :class=>"title" %></dd>
+  
+<dt><label>Description:</label></dt>
+<dd><%= text_area_tag "settings[description]", SiteConfig[:description], :rows=>5 %></dd>
+
+<dt><label>Author(s):</label></dt>
+<dd><%= text_field_tag "settings[authors]", SiteConfig[:authors] %></dd>
+
+<dt><label>Thumbnail Size:</label></dt>
+<dd><%= text_field_tag "settings[thumbnail_size]", SiteConfig[:image_sizes]['thumbnail'] %></dd>
+
+<dt><label>Publish time:</label></dt>
+<dd class="info">
+  When post-dating strips, at what time should your strip be published? (Current server time is: <%= Time.now %>)
+</dd>
+<dd><select name="settings[publish_time]" id="publish_time">
+  <% pt = SiteConfig[:publish_time] %>
+  <%= (0..23).map{ |i| %{<option value="#{i}" #{'selected' if i == pt }>#{i}:00</option>} } %>
+</select><span class="info">24-hour time</dd>
+
+<dt><label>Akismet Key:</label></dt>
+<dd><%= text_field_tag "settings[akismet_key]", SiteConfig[:akismet_key] %></dd>

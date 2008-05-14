@@ -1,0 +1,17 @@
+<%= f.text_field :title, :class=>'title' %>
+
+<% if mode == :new %>
+
+<%= f.file_field :uploadedfile, :label=>'File' %>
+
+<% else %>
+<dt><label>File:</label></dt>
+<dd><img src="<%= @strip.url_to_file 'thumbnail' %>" align="absmiddle"/> <%= @strip.filename %> </dd>
+
+<% end %>
+
+<%= f.text_area :notes, :rows=>8 %>
+
+<% f.date_select :published_on %> 
+
+<%= date_picker_field :strip, :published_on, "Publish On" %>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  	<title>Seqent Admin : <%= controller.controller_name %> / <%= controller.action_name %></title>
+    <%= stylesheet_link_tag 'admin/main' %>
+    <%= javascript_include_tag 'admin/reflection', 'admin/jquery', 'admin/plugins', 'admin/date-picker', 'admin/application' %>
+  </head>
+  <body class="<%= controller.controller_name %> <%= controller.action_name %>">
+    <div id="site-container">
+      <div id="site-header">
+        <div id="site-header-messages">
+          <div id="site-header-links">
+            <%= link_to 'Settings', site_url() %>
+            ::
+            <%= link_to 'View Site', home_url, :target=>'_new_window' %>
+            ::
+            <select id="quick-links">
+              <option selected> Quick Links: </option>
+              <optgroup label="Create New...">
+                <option value="<%= new_strip_url %>">Strip</option>
+                <option value="<%= new_post_url %>">Post</option>
+                <option value="<%= new_page_url %>">Page</option>
+                <option value="<%= new_asset_url(:type=>:avatar) %>">Avatar</option>
+                <option value="<%= new_asset_url(:type=>:wallpaper) %>">Wallpaper</option>
+              </opgroup>
+              <optgroup label="Maintain...">
+                <option value="<%= comments_url()%>">Unmoderated Comments</option>
+                <option value="<%= users_url() %>">Users</option>
+              </opgroup>
+              <optgroup label="System...">
+                <option value="<%= url_for(:controller=>'site', :action=>'clear_cache') %>">Clear Cache</option>
+                <option value="<%= url_for(:controller=>'site', :action=>'publish_overdue') %>">Publish Overdue Strips</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <a id="site-logo" href="/admin"><img src="/images/sequent-logo.png" border="0" alt="Sequent"/></a>
+        <div id="site-tabset">
+          <ul>
+            <li class="strips"><%= link_to "Strips", strip_url(nil) %></li>
+            <li class="news"><%= link_to "News", post_url(nil) %></li>
+            <li class="pages"><%= link_to "Pages", page_url(nil) %></li>
+            <li class="comments"><%= link_to "Comments", comment_url(nil) %></li>
+            <li class="assets"><%= link_to "Assets", asset_url(nil) %></li>
+            <li class="users"><%= link_to "Users", user_url(nil) %></li>
+            <!-- <li class="site"><%= link_to "Layout", site_url(nil) %></li> -->
+          </ul>
+        </div>
+      </div>
+      <div id="site-content">
+        <div id="right">
+          <div id="right-content">
+            <%= render :partial=>'sidebar' %>
+          </div>
+        </div>
+        <div id="left">
+          <div id="left-content">
+            <div class="flashes">
+            <% flash.keys.each do |kind| %>
+              <div class="<%= kind %>">
+                <%= flash[kind] %>
+              </div>
+            <% end %>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <div id="site-footer">
+        <div id="site-footer-content">
+          Sequent <%= Sequent::VERSION::STRING %>, created by M@ McCray. <%= link_to 'Check for updates...', '#'  %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

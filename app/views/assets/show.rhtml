@@ -1,0 +1,7 @@
+<h2><%= @asset.title %></h2>
+
+<div>
+  <img src="<%= @asset.url_to_file('thumbnail') %>" />
+</div>
+
+<%= link_to 'View Fullsize', @asset.url_to_file %> or <%= link_to 'Back', assets_path %>

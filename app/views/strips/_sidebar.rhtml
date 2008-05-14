@@ -1,0 +1,13 @@
+
+<%= calendar(:year=>Date.today.year, :month=>Date.today.month, :abbrev => (0..0)) do |d|
+  if @strip_dates.keys.include? d
+    pub = @strip_dates[d].is_published
+    [
+      link_to(d.day, edit_strip_path(@strip_dates[d]), :id=>"strip-#{@strip_dates[d].id}"),
+      {
+        :class=>(pub) ? 'specialDay' : 'specialDay unpublished', 
+        :title=>@strip_dates[d].title
+      }
+    ]
+  end
+end %>

@@ -1,0 +1,73 @@
+
+TABLE.grid {
+	width: 490px;
+	border-collapse: collapse;
+	margin-bottom: 25px;
+}
+
+TABLE.grid TH {
+	color: #AAA;
+	text-align: left;
+	padding-left: 5px;
+	font-size: 85%;
+}
+
+TABLE.grid TR.even {
+	background: #E3DFFF;
+}
+
+TABLE.grid TR.delete-highlight,
+TABLE.grid TR.delete-highlight TD,
+TABLE.grid TR.delete-highlight TD A,
+TABLE.grid TR.highlight TD A.inline {
+	background-color: red;	color: white;
+}
+
+TABLE.grid TR.highlight,
+TABLE.grid TR.highlight TD,
+TABLE.grid TR.highlight TD A,
+TABLE.grid TR.highlight TD A.inline {
+	background-color: #3448B1;	color: white !important;
+}
+
+TABLE.grid TR.approve-highlight,
+TABLE.grid TR.approve-highlight TD,
+TABLE.grid TR.approve-highlight TD A,
+TABLE.grid TR.approve-highlight TD A.inline {
+	background-color: #0ECB00;	color: white !important;
+}
+
+TABLE.grid TD {
+	padding-left: 5px;
+	color: #555;
+	font-size: 80%;
+}
+
+TABLE.grid TD A {
+	color: #000;
+	font-weight: bold;
+	font-size: 120%;
+/*	display: block;*/
+}
+
+TABLE.grid TD A.inline {
+	color: navy  !important;
+	font-weight: normal !important;
+	font-size: 100% !important;
+}
+
+TABLE.grid TD.delete {
+	text-align: right;
+	width: 25px;
+}
+
+TABLE.grid TD.approve-delete {
+	text-align: right;
+}
+
+TABLE.grid TD.unpublished {
+	font-style: italic;
+}
+TABLE.grid TD.unpublished:after {
+	content: '*';
+}

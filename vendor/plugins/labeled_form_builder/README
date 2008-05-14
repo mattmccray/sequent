@@ -1,0 +1,78 @@
+LabeledFormBuilder
+==================
+
+Automatically creates field labels, and surrounds the form markup using Data-Definition Lists. An example CSS file is included as well.
+
+At it's simplest, you use `labeled_form_for` the same way to you `form_for`, then define each field of the object:
+
+    <% labeled_form_for :project, :url=>project_url do |f| %>
+      <%= f.text_field :name %>
+      <%= f.text_field :owner %>
+      <%= f.text_field :password %>
+      <%= f.text_area  :description %>
+    <% end %>
+
+This will create the form, labels and input tags, and structural markup (DL, DT, DD). The labels are based on the field names. You can, of course, override them by adding a `:label` option:
+
+    <%= f.text_field :owner, :label=>'Owner Email Address' %>
+
+The field methods also except `:info` and `:example` options. The `:info` content will appear directly after the label, in a SPAN tag with the class of "info". It will put the content specified in the `:example` option in a DD tag with the class of "example" directly after the DD tag containing the field HTML.
+
+This plugin also adds a form method for `button_group`, which puts the block content in a DD tag with the class of "button-group":
+
+    <% f.button_group do %>
+      <%= submit_tag 'Create' %> or <%= link_to "Cancel", projects_url %>
+    <% end %>
+
+The following example should clear up any confusion.
+
+An Example `_form.rhtml` partial:
+
+    <% labeled_form_for :project, :url=>project_url, :html=>{:method=>'post'} do |f| %>
+
+      <%= error_messages_for :project %>
+
+      <%= f.text_field :name,        :label=>'Project Name' %>
+      <%= f.text_field :owner,       :label=>'Email',    :info=>'(project admin email)' %>
+      <%= f.text_field :password,    :label=>'Password', :info=>'(used for project admin)' %>
+      <%= f.text_field :password,    :label=>'Password Confirmation' %>
+      <%= f.text_area  :description, :example=>'Textile enabled' %>
+
+      <% f.button_group do %>
+        <%= submit_tag 'Create' %> 
+        or
+        <%= link_to "Cancel", projects_url %>    
+      <% end %>
+
+    <% end %>
+
+The resulting `HTML`:
+
+    <dl class="form-container">
+    <form action="http://127.0.0.1:3000/projects" method="post">
+
+      <dt><label for="project_name">Project Name</label></dt>
+      <dd><input id="project_name" name="project[name]" size="30" type="text" /></dd>
+
+      <dt><label for="project_owner">Email</label><span class="info">(project admin email)</span></dt>
+      <dd><input id="project_owner" name="project[owner]" size="30" type="text" /></dd>
+
+      <dt><label for="project_password">Password</label><span class="info">(used for project admin)</span></dt>
+      <dd><input id="project_password" name="project[password]" size="30" type="text" /></dd>
+
+      <dt><label for="project_password">Password Confirmation</label></dt>
+      <dd><input id="project_password" name="project[password]" size="30" type="text" /></dd>
+
+      <dt><label for="project_description">Description</label></dt>
+      <dd><textarea cols="40" id="project_description" name="project[description]" rows="20"></textarea></dd>
+      <dd class="example">Textile enabled</dd>
+
+      <dd class="button-group">
+        <input name="commit" type="submit" value="Create" /> 
+        or
+        <a href="http://127.0.0.1:3000/projects">Cancel</a>    
+      </dd>
+
+    </form>
+    </dl>
+    

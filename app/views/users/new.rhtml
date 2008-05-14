@@ -1,0 +1,11 @@
+<% labeled_form_for :user, :url => users_path do |f| -%>
+
+  <%= error_messages_for :user %>
+
+  <%= render :partial=>'form_fields', :locals=>{:f=>f} %>
+
+  <% f.button_group do %>
+    <%= submit_button "Create" %> or <%= link_to 'Cancel', users_path %>
+  <% end %>
+
+<% end -%>

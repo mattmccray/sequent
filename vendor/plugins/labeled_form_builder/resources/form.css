@@ -1,0 +1,35 @@
+.form-container FORM {
+  margin: 0px;
+  padding: 0px;
+}
+.form-container DT {
+  margin: 0px;
+  margin-top: 10px;
+}
+.form-container DD {
+  margin: 0px;
+  margin-top: 2px;
+}
+.form-container DD.example {
+  margin: 0px;
+  font-size: 90%;
+  color: gray;
+}
+.form-container DT SPAN.info {
+  font-size: 90%;
+  color: gray;
+  padding-left: 5px;
+}
+.form-container DD.button-group {
+  margin: 0px;
+  margin-top: 5px;
+  padding: 5px;
+  color: #555;
+  font-size: 90%;
+}
+.form-container DD.button-group A {
+  color: maroon;
+}
+.form-container DD.button-group A:hover {
+  color: red;
+}

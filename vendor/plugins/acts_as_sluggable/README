@@ -1,0 +1,10 @@
+= Validates email format
+
+Validate various formats of email address
+
+== Example
+
+ class Person < ActiveRecord::Base
+   validates_email_format_of :email
+ end
+

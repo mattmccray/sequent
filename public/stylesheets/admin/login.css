@@ -1,0 +1,44 @@
+/* @group Elements */
+
+/* Level the playing ground... All browsers should now look alike, in theory. */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	background: silver;
+}
+
+/* @end */
+
+.login-container {
+	width: 250px;
+	margin: 50px auto;
+	border: 10px solid gray;
+	background: white;
+}
+
+.login-header {
+	padding: 10px 0px;
+	text-align: center;
+	background: #086bce;
+}
+
+.login-body  {
+	padding: 15px;
+}
+
+.login-body P {
+	margin-bottom: 5px;
+}
+
+.login-body P INPUT[type=text], .login-body P INPUT[type=password] {
+	width: 220px;
+}
+
+P.login-panel {
+	text-align: right;
+}

@@ -1,0 +1,13 @@
+
+<% labeled_form_for(:asset, :url => asset_path(@asset), :html => { :method => :put, :multipart=>true }) do |f| %>
+
+  <%= error_messages_for :asset %>
+  
+  <%= render :partial=>'form_fields', :locals=>{:f=>f, :mode=>:edit} %>
+  
+  <% f.button_group do %>
+    <%= submit_button "Update" %> or <%= link_to 'Cancel', assets_path %>
+  <% end %>
+  
+<% end %>
+

@@ -1,0 +1,28 @@
+{% assign body_classname = 'comic' %}
+
+{% capture content_for_top %}
+  {% if mode == 'single' %}
+    {% include 'strip' with comic %}
+  {% endif %}
+{% endcapture %}
+
+
+{% if mode == 'single' %}
+  <h1>#{{ comic.position }} - {{ comic.title }}</h1>
+  {{ comic.body }}
+  
+  Published on: {{ comic.published_on | date: '%m.%d.%Y'}}
+
+  {% include 'comments' comic.comments owner:comic %}
+
+{% else %}
+
+  <h1>Archive</h1>
+
+  <ul>
+  {% for strip in comics %}
+    <li><a href="{{ strip | url_to_comic }}"><img src="{{ strip.thumbnail_url }}"/><div>{{ strip.position }}. {{ strip.title }}</div></a></li>
+  {% endfor %}
+  </ul>
+
+{% endif %}

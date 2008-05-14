@@ -1,0 +1,27 @@
+
+  <div id="comic">
+    <img src="{{ comic.url }}" alt="#{{ comic.position }} - {{ comic.title }}" />
+  </div>
+
+  <div id="pager">
+    {% unless comic.is_first %}
+      {{ comic.first | link_to_comic: 'First'}}
+      {{ comic.previous | link_to_comic: '&laquo; Back' }}    
+    {% else %}
+      <span>First</span>
+      <span>&laquo; Back</span>
+    {% endunless %}
+    
+    <a class="comments" title="{{ comic.comments | size | pluralize: 'comment' }}" href="{{ comic | url_to_comic }}#comments"><img src="{{ 'comments.png' | image_path }}" border="0" align="absmiddle" /></a>    
+    
+    <a class="RSS" title="RSS Feed" href="/feed/all"><img src="{{ 'feed.png' | image_path }}" border="0" align="absmiddle" /></a>
+    
+    
+    {% unless comic.is_last %}
+      {{ comic.next | link_to_comic: 'Next &raquo;' }}
+      {{ comic.last | link_to_comic: 'Latest', true }}
+    {% else %}
+      <span>Next &raquo;</span>
+      <span>Latest</span>
+    {% endunless %}
+  </div>

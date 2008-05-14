@@ -1,0 +1,15 @@
+Usage:
+
+  class Blog < ActiveRecord::Base
+    rendered_column :body, :use_erb=>true
+    rendered_column :summary, :format=>'markdown' 
+  end
+
+By default, this will try to save the resulting HTML in the
+AR fields 'rendered_body' and 'rendered_summary'. You can 
+override that by setting :prefix and :postfix. Defaults are:
+
+  :prefix=>'rendered_'
+  :postfix=>'',
+  :format=>'textile'
+  :use_erb=>false

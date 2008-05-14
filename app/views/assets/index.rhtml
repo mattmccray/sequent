@@ -1,0 +1,27 @@
+<% @groups.keys.sort.each do |asset_type| %>
+
+  <h2><%= asset_type %>s</h2>
+
+  <table class="grid">
+    <tr>
+      <th width="60%">Title</th>
+      <th>Created</th>
+      <th>&nbsp;</th>
+    </tr>
+
+  <% for asset in @groups[asset_type] %>
+    <tr class="<%= cycle 'even', 'odd', :name=>'assets' %>">
+      <td><%= link_to asset.title, asset_path(asset) %></td>
+      <td><%= asset.created_on.to_s :short %></td>
+      <td class="delete"><%= delete_button 'delete', asset_path(asset), :class=>'delete-icon' %></td>
+    </tr>
+  <% end %>
+  </table>
+  <%- reset_cycle("assets") -%>
+<% end %>
+
+
+<br/>
+
+<%= link_button "New Avatar", new_asset_url(:type=>:avatar) %>
+<%= link_button "New Wallpaper", new_asset_url(:type=>:wallpaper) %>

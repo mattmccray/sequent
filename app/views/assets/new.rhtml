@@ -1,0 +1,12 @@
+
+<% labeled_form_for(:asset, :url => assets_path, :html=>{:multipart=>true}) do |f| %>
+  
+  <%= error_messages_for :asset %>
+  
+  <%= render :partial=>'form_fields', :locals=>{:f=>f, :mode=>:new} %>
+  
+  <% f.button_group do %>
+    <%= submit_button "Create" %> or <%= link_to 'Cancel', assets_path %>
+  <% end %>
+
+<% end %>

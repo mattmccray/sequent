@@ -1,0 +1,16 @@
+<%= f.text_field :title, :class=>'title' %>
+
+<% if mode == :new %>
+
+<%= f.file_field :uploadedfile, :label=>'File' %>
+
+<%= hidden_field_tag 'asset_type', @asset_type %>
+
+<% else %>
+
+<dt>File:</dt>
+<dd><img src="<%= @strip.url_to_file %>" align="absmiddle"/><%= @strip.filename %></dd>
+
+<% end %>
+
+<%= f.text_area :notes, :rows=>8 %>

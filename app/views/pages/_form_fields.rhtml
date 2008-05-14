@@ -1,0 +1,9 @@
+<% if mode == :edit %>
+  <%= f.text_field :title, :class=>'title', :example=>"The slug for this page is: <tt>#{@page.slug}</tt> " %>
+<% else %>
+  <%= f.text_field :title, :class=>'title' %>
+<% end %>
+
+<%= f.text_area :body, :example=>'You may use textile as markup' %>
+
+<%= attachment_panel @page.attachments %>

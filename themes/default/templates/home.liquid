@@ -1,0 +1,12 @@
+{% assign body_classname = 'home' %}
+
+{% capture content_for_top %}
+  {% include 'strip' with latest.comic comic:latest.comic %}
+{% endcapture %}
+
+{% include 'post' with latest.post inline:false %}
+
+<div class="past-entries">
+  <a href="/news">Read past entries...</a>
+</div>
+

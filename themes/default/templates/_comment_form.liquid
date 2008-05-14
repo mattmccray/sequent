@@ -1,0 +1,18 @@
+<dl class="comment-form">
+  <dt>Name:</dt>
+  <dd>{% commentfield 'author' %}</dd>
+
+  <dt>URL:</dt>
+  <dd>{% commentfield 'url' %}</dd>
+
+  <dt>Email:
+  <dd>{% commentfield 'email' %}</dd>
+
+  <dt>Body:</dt>
+  <dd>{% commentfield 'body' %}</dd>
+  <dd><label>{% commentfield 'remember' %} Remember me</label></dd>
+
+  <dd class="button-group">
+    <input type="submit" value="Send Comment" />
+  </dd>
+</dl>

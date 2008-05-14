@@ -1,0 +1,40 @@
+<h1>Setup</h1>
+
+<% form_tag site_url(:action=>'first_run') do %>
+
+<h3>User Information</h3>
+
+<dl class="form-container" id="meta">
+  
+  <%= error_messages_for :user %>
+  
+  <dt><label>Login:</label></dt>
+  <dd><%= text_field_tag 'user[login]', @user.login %></dd>
+
+  <dt><label>Display Name:</label></dt>
+  <dd><%= text_field_tag 'user[display_name]', @user.display_name %></dd>
+  
+  <dt><label>Email:</label></dt>
+  <dd><%= text_field_tag 'user[email]', @user.email %></dd>
+  
+  <dt><label>New Password:</label></dt>
+  <dd><%= password_field_tag 'user[password]' %></dd>
+  
+  <dt><label>Confirm New Password:</label></dt>
+  <dd><%= password_field_tag 'user[password_confirmation]' %></dd>
+  
+</dl>
+
+  <h3>Site Information</h3>
+
+<dl class="form-container">
+  
+  <%= render :partial=>'site_info_fields' %>
+  
+  <%= hidden_field_tag 'settings[first_run]', 'false' %></dd>
+
+  <dd class="button-group">
+    <%= submit_button "Finish Setup" %>
+  </dd>
+</dl>
+<% end %>

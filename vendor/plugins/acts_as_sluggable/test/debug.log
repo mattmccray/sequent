@@ -1,0 +1,83 @@
+# Logfile created on Thu Dec 21 04:01:56 CST 2006 by logger.rb/1.5.2.7
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: pages: DROP TABLE pages[0m
+  [4;35;1mSQL (0.000252)[0m   [0mCREATE TABLE pages ("id" INTEGER PRIMARY KEY NOT NULL, "parent_id" int, "title" varchar(255), "url_slug" varchar(255)) [0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000076)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000247)[0m   [0;1mPRAGMA table_info(schema_info)[0m
+  [4;35;1mSQL (0.000100)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: pages: DROP TABLE pages[0m
+  [4;35;1mSQL (0.000254)[0m   [0mCREATE TABLE pages ("id" INTEGER PRIMARY KEY NOT NULL, "parent_id" int, "title" varchar(255), "url_slug" varchar(255)) [0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000078)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mPRAGMA table_info(schema_info)[0m
+  [4;35;1mSQL (0.000100)[0m   [0mUPDATE schema_info SET version = 0[0m
+  [4;36;1mSQL (0.000531)[0m   [0;1mPRAGMA table_info(pages)[0m
+  [4;35;1mPage Load (0.000147)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'title' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Title', NULL, 'title')[0m
+  [4;35;1mPage Load (0.000126)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'title' AND pages.parent_id IS NULL AND pages.id <> 5) LIMIT 1[0m
+  [4;36;1mPage Update (0.000106)[0m   [0;1mUPDATE pages SET "title" = 'Title', "url_slug" = 'title', "parent_id" = NULL WHERE id = 5[0m
+  [4;35;1mPage Load (0.000097)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'title-and-some-spaces' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Title and some spaces', NULL, 'title-and-some-spaces')[0m
+  [4;35;1mPage Load (0.000113)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'title-and-some-spaces' AND pages.parent_id IS NULL AND pages.id <> 6) LIMIT 1[0m
+  [4;36;1mPage Update (0.000090)[0m   [0;1mUPDATE pages SET "title" = 'Title and some spaces', "url_slug" = 'title-and-some-spaces', "parent_id" = NULL WHERE id = 6[0m
+  [4;35;1mPage Load (0.000094)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'title-with-dashes' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Title-with-dashes', NULL, 'title-with-dashes')[0m
+  [4;35;1mPage Load (0.000114)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'title-with-dashes' AND pages.parent_id IS NULL AND pages.id <> 7) LIMIT 1[0m
+  [4;36;1mPage Update (0.000089)[0m   [0;1mUPDATE pages SET "title" = 'Title-with-dashes', "url_slug" = 'title-with-dashes', "parent_id" = NULL WHERE id = 7[0m
+  [4;35;1mPage Load (0.000098)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'title-with-symbols' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Title-with''-$#)(*%symbols', NULL, 'title-with-symbols')[0m
+  [4;35;1mPage Load (0.000114)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'title-with-symbols' AND pages.parent_id IS NULL AND pages.id <> 8) LIMIT 1[0m
+  [4;36;1mPage Update (0.000092)[0m   [0;1mUPDATE pages SET "title" = 'Title-with''-$#)(*%symbols', "url_slug" = 'title-with-symbols', "parent_id" = NULL WHERE id = 8[0m
+  [4;35;1mPage Load (0.000097)[0m   [0mSELECT * FROM pages WHERE (url_slug = '-urltitle-' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('/urltitle/', NULL, '-urltitle-')[0m
+  [4;35;1mPage Load (0.000114)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = '-urltitle-' AND pages.parent_id IS NULL AND pages.id <> 9) LIMIT 1[0m
+  [4;36;1mPage Update (0.000091)[0m   [0;1mUPDATE pages SET "title" = '/urltitle/', "url_slug" = '-urltitle-', "parent_id" = NULL WHERE id = 9[0m
+  [4;35;1mPage Load (0.000097)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'calcul-en-fran-aise' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('calculé en française', NULL, 'calcul-en-fran-aise')[0m
+  [4;35;1mPage Load (0.000106)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'calcul-en-fran-aise' AND pages.parent_id IS NULL AND pages.id <> 10) LIMIT 1[0m
+  [4;36;1mPage Update (0.000090)[0m   [0;1mUPDATE pages SET "title" = 'calculé en française', "url_slug" = 'calcul-en-fran-aise', "parent_id" = NULL WHERE id = 10[0m
+  [4;35;1mPage Load (0.000120)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'creation' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Creation', NULL, 'creation')[0m
+  [4;35;1mPage Load (0.000144)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'creation' AND pages.parent_id IS NULL AND pages.id <> 5) LIMIT 1[0m
+  [4;36;1mPage Update (0.000161)[0m   [0;1mUPDATE pages SET "title" = 'Creation', "url_slug" = 'creation', "parent_id" = NULL WHERE id = 5[0m
+  [4;35;1mPage Load (0.000129)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'something-different' AND pages.parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000088)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Test overrride', NULL, 'something-different')[0m
+  [4;35;1mPage Load (0.000097)[0m   [0mSELECT * FROM pages WHERE (url_slug = '' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000082)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES(NULL, NULL, '')[0m
+  [4;35;1mPage Load (0.000115)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = '' AND pages.parent_id IS NULL AND pages.id <> 7) LIMIT 1[0m
+  [4;36;1mPage Update (0.000108)[0m   [0;1mUPDATE pages SET "title" = NULL, "url_slug" = '', "parent_id" = NULL WHERE id = 7[0m
+  [4;35;1mPage Load (0.000240)[0m   [0mSELECT * FROM pages WHERE (url_slug = '' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mPage Load (0.000102)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = '-0' and parent_id IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000089)[0m   [0mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('', NULL, '-0')[0m
+  [4;36;1mPage Load (0.000105)[0m   [0;1mSELECT * FROM pages WHERE (pages.url_slug = '-0' AND pages.parent_id IS NULL AND pages.id <> 8) LIMIT 1[0m
+  [4;35;1mPage Update (0.000100)[0m   [0mUPDATE pages SET "title" = '', "url_slug" = '-0', "parent_id" = NULL WHERE id = 8[0m
+  [4;36;1mPage Load (0.000111)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = 'unique-scoped-title' and parent_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.000085)[0m   [0mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Unique scoped title', 1, 'unique-scoped-title')[0m
+  [4;36;1mPage Load (0.000116)[0m   [0;1mSELECT * FROM pages WHERE (pages.url_slug = 'unique-scoped-title' AND pages.parent_id = 1 AND pages.id <> 5) LIMIT 1[0m
+  [4;35;1mPage Update (0.000114)[0m   [0mUPDATE pages SET "title" = 'Unique scoped title', "url_slug" = 'unique-scoped-title', "parent_id" = 1 WHERE id = 5[0m
+  [4;36;1mPage Load (0.000096)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = 'unique-scoped-title' and parent_id = 2) LIMIT 1[0m
+  [4;35;1mSQL (0.000093)[0m   [0mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Unique scoped title', 2, 'unique-scoped-title')[0m
+  [4;36;1mPage Load (0.000118)[0m   [0;1mSELECT * FROM pages WHERE (pages.url_slug = 'unique-scoped-title' AND pages.parent_id = 2 AND pages.id <> 6) LIMIT 1[0m
+  [4;35;1mPage Update (0.000103)[0m   [0mUPDATE pages SET "title" = 'Unique scoped title', "url_slug" = 'unique-scoped-title', "parent_id" = 2 WHERE id = 6[0m
+  [4;36;1mPage Load (0.000125)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = 'unique-title' and parent_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.000112)[0m   [0mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Unique title', 1, 'unique-title')[0m
+  [4;36;1mPage Load (0.000112)[0m   [0;1mSELECT * FROM pages WHERE (pages.url_slug = 'unique-title' AND pages.parent_id = 1 AND pages.id <> 5) LIMIT 1[0m
+  [4;35;1mPage Update (0.000126)[0m   [0mUPDATE pages SET "title" = 'Unique title', "url_slug" = 'unique-title', "parent_id" = 1 WHERE id = 5[0m
+  [4;36;1mPage Load (0.000257)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = 'unique-title' and parent_id = 1) LIMIT 1[0m
+  [4;35;1mPage Load (0.000106)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'unique-title-0' and parent_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.000086)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Unique title', 1, 'unique-title-0')[0m
+  [4;35;1mPage Load (0.000105)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'unique-title-0' AND pages.parent_id = 1 AND pages.id <> 6) LIMIT 1[0m
+  [4;36;1mPage Update (0.000099)[0m   [0;1mUPDATE pages SET "title" = 'Unique title', "url_slug" = 'unique-title-0', "parent_id" = 1 WHERE id = 6[0m
+  [4;35;1mPage Load (0.000102)[0m   [0mSELECT * FROM pages WHERE (url_slug = 'slug-update' and parent_id IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mINSERT INTO pages ("title", "parent_id", "url_slug") VALUES('Slug update', NULL, 'slug-update')[0m
+  [4;35;1mPage Load (0.000114)[0m   [0mSELECT * FROM pages WHERE (pages.url_slug = 'slug-update' AND pages.parent_id IS NULL AND pages.id <> 5) LIMIT 1[0m
+  [4;36;1mPage Update (0.000101)[0m   [0;1mUPDATE pages SET "title" = 'Slug update', "url_slug" = 'slug-update', "parent_id" = NULL WHERE id = 5[0m
+  [4;35;1mPage Update (0.000116)[0m   [0mUPDATE pages SET "title" = 'Updated title only', "url_slug" = 'slug-update', "parent_id" = NULL WHERE id = 5[0m
+  [4;36;1mPage Load (0.000107)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = 'updated-title-and-slug-to-nil' and parent_id IS NULL) LIMIT 1[0m
+  [4;35;1mPage Update (0.000093)[0m   [0mUPDATE pages SET "title" = 'Updated title and slug to nil', "url_slug" = 'updated-title-and-slug-to-nil', "parent_id" = NULL WHERE id = 5[0m
+  [4;36;1mPage Load (0.000113)[0m   [0;1mSELECT * FROM pages WHERE (pages.url_slug = 'updated-title-and-slug-to-nil' AND pages.parent_id IS NULL AND pages.id <> 5) LIMIT 1[0m
+  [4;35;1mPage Update (0.000089)[0m   [0mUPDATE pages SET "title" = 'Updated title and slug to nil', "url_slug" = 'updated-title-and-slug-to-nil', "parent_id" = NULL WHERE id = 5[0m
+  [4;36;1mPage Load (0.000094)[0m   [0;1mSELECT * FROM pages WHERE (url_slug = 'updated-title-and-slug-to-empty' and parent_id IS NULL) LIMIT 1[0m
+  [4;35;1mPage Update (0.000099)[0m   [0mUPDATE pages SET "title" = 'Updated title and slug to empty', "url_slug" = 'updated-title-and-slug-to-empty', "parent_id" = NULL WHERE id = 5[0m
+  [4;36;1mPage Load (0.000104)[0m   [0;1mSELECT * FROM pages WHERE (pages.url_slug = 'updated-title-and-slug-to-empty' AND pages.parent_id IS NULL AND pages.id <> 5) LIMIT 1[0m
+  [4;35;1mPage Update (0.000089)[0m   [0mUPDATE pages SET "title" = 'Updated title and slug to empty', "url_slug" = 'updated-title-and-slug-to-empty', "parent_id" = NULL WHERE id = 5[0m

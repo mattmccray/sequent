@@ -1,0 +1,24 @@
+<table class="grid">
+  <tr>
+    <th>Title</th>
+    <th>Last Updated</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for page in @pages %>
+  <tr class="<%= cycle 'even', 'odd' %>">
+    <td>
+      <%= link_to page.title, edit_page_path(page) %>
+      <span class="meta">
+        <%= pluralize(page.attachments.count, "Attachment") if page.attachments.count > 0 %> 
+      </span>
+    </td>
+    <td><%= page.updated_on.to_s :short %></td>
+    <td class="delete"><%= delete_button 'delete', page_path(page), :class=>'delete-icon' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_button 'New Page', new_page_path %>
